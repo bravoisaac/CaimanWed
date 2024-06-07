@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 from .models import Producto, Transportista, OrdenDespacho, DetalleOrden, Supermercado, Envio, Usuario
 from .forms import UsuarioForm
@@ -5,6 +6,8 @@ from django.contrib.auth import authenticate, login
 def index(request):
     return render(request, 'index.html')
 
+def home(request):
+    return render(request, 'home.html')
 
 def login(request):
     if request.method == 'POST':
