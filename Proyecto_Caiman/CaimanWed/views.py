@@ -1,5 +1,17 @@
 from django.shortcuts import render,redirect
 from .models import Producto, Transportista, OrdenDespacho, DetalleOrden, Supermercado, Envio, Usuario
+
+def home(request):
+    return render(request, 'home.html')
+
+def store(request):
+    return render(request, 'store.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def support(request):
+    return render(request, 'support.html')
 from .forms import UsuarioForm
 def index(request):
     return render(request, 'index.html')
@@ -20,7 +32,7 @@ def registro(request):
         if form.is_valid():
             form.save()
            
-            return redirect('index') 
+            return redirect('store') 
     else:
         form = UsuarioForm()
     return render(request, 'registro.html', {'form': form})
