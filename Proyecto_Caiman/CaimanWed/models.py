@@ -1,15 +1,15 @@
 from django.db import models
 
 class Producto(models.Model):
-    nombre = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=250)
     descripcion = models.TextField()
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    categoria = models.CharField(max_length=50)
+    precio = models.DecimalField(max_digits=20, decimal_places=2)
+    categoria = models.CharField(max_length=10)
     stock = models.IntegerField()
 
 class Transportista(models.Model):
     nombre = models.CharField(max_length=100)
-    direccion = models.CharField(max_length=200)
+    direccion = models.CharField(max_length=250)
     telefono = models.CharField(max_length=20)
     email = models.EmailField()
 
