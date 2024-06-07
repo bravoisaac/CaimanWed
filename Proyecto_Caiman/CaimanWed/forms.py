@@ -5,4 +5,4 @@ from .models import  Usuario
 class UsuarioForm(AuthenticationForm):
     class Meta:
         model = Usuario
-        fields = ['email', 'contrasena']
+        fields = ['email', 'contrasena','contrasena', 'tipo']

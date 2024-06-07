@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Producto, Transportista, OrdenDespacho, DetalleOrden, Supermercado, Envio, Usuario
 
 from django.shortcuts import render, redirect
@@ -19,6 +19,7 @@ def about(request):
 
 def support(request):
     return render(request, 'support.html')
+from .forms import UsuarioForm
 def index(request):
     return render(request, 'index.html')
 
@@ -44,3 +45,16 @@ def login(request):
         formulario = UsuarioForm()
         
     return render(request, 'login/login.html', {'formulario': formulario})
+
+
+def registro(request):   
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+           
+            return redirect('store') 
+    else:
+        form = UsuarioForm()
+    return render(request, 'registro.html', {'form': form})
+    
