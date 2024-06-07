@@ -10,7 +10,7 @@ def login(request):
     if request.method == 'POST':
         formulario = UsuarioForm(data=request.POST)
         if formulario.is_valid():
-            username = formulario.cleaned_data.get('nombre')  
+            username = formulario.cleaned_data.get('email')  
             password = formulario.cleaned_data.get('contrasena')
             user = authenticate(request, username=username, password=password)
             if user is not None:
