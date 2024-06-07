@@ -10,7 +10,7 @@
 <body>
     <div class="content">
         <form action="" method="POST">
-            
+            {% csrf_token %}
             
             <h2>CaimanWed</h2>
             <div class="input-box">
@@ -32,6 +32,7 @@
             </div>
     
             <button type="submit" class="btn">Iniciar Sesión</button>
+            <button type="submit" class="btn" data-url="{ url 'registro'}">Registrarme</button>
         </form>
         
     </div>

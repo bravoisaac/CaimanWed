@@ -39,7 +39,7 @@ def login(request):
                 if user.rol:
                     return redirect('home')
                 else:
-                    return redirect('login')
+                    return redirect('login/')
     else:
         formulario = UsuarioForm()
         
