@@ -6,6 +6,7 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=20, decimal_places=2)
     categoria = models.CharField(max_length=10)
     stock = models.IntegerField()
+    
 
 class Transportista(models.Model):
     nombre = models.CharField(max_length=100)
