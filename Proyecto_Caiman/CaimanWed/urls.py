@@ -1,12 +1,14 @@
 from django.urls import path
-from .views import usuarios, detalleusuario
-
+from .views import index_prueba ,usuarios, detalleusuario, modificar_usuario, eliminar_usuario
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', usuarios, name='usuarios'),
-    path('detalleusuario', detalleusuario, name='detalleusuario')
+    path('', index_prueba, name='index_prueba'),
+    path('usuarios/', usuarios, name='usuarios'),
+    path('detalleusuario/<id>', detalleusuario, name='detalleusuario'),
+    path('modificar_usuario/<id>', modificar_usuario, name='modificar_usuario'),
+    path('eliminar_usuario/<id>', eliminar_usuario, name='eliminar_usuario')
 ]
 
 if settings.DEBUG:

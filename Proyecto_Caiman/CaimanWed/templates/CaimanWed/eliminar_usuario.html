@@ -1,0 +1,63 @@
+{% extends "CaimanWed/base.html" %}
+{% load static %}
+
+{% block Contenido %}
+
+<div class="container px-5 mt-4">
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="mt-4 p-2 border rounded">
+                <h3 class="text-center mt-3">Eliminar Usuario</h3>
+                <div class="alert alert-danger" role="alert">
+                    <h1>Atención:</h1>
+                    <p><strong>Está a punto de eliminar un usuario:</strong></p>
+                    <h4>NOMBRE: {{usuario.nombre}} - {{usuario.email}}</h4>
+                </div>
+
+                <div>
+                    <input type="button" value="Eliminar Usuario" data-bs-toggle="modal" data-bs-target="#mymodal"
+                        class="btn btn-danger text-light">
+                    <a href="usuarios" role="button" class="btn btn-light border">Volver</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Confirmar Eliminación</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>¿Está seguro que desea eliminar el usuario?</p>
+                <p>{{usuario.nombre}}</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-danger" data-bs-dismiss="modal" value="Confirmar Eliminación">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock Contenido %}

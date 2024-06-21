@@ -6,7 +6,7 @@
 <div class="container px-5 mt-4">
 
     <h1>Registro de usuarios</h1>
-
+    <a href="{% url "index_prueba" %}" role="button">Agregar Usuario</a>
 
     <div class="container mt-3">
         <h2>Usuarios</h2>
@@ -14,20 +14,20 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>RUT</th>
                     <th>NOMBRE</th>
-                    <th>APELLIDO</th>
                     <th>EMAIL</th>
+                    <th>CONTRASENA</th>
+                    <th>TIPO</th>
                 </tr>
             </thead>
             <tbody>
-                {% for u in Usuario %}
+                {% for u in usuarios %}
                 <tr>
-                    <td>{{u.rut}}</td>
                     <td>{{u.nombre}}</td>
-                    <td>{{u.apellido}}</td>
                     <td>{{u.email}}</td>
-                    <td><a href="{% url "detalleusuario" u.rut %}" role="button" class="btn btn-info btn-sm text.light">Ver usuario</a></td>
+                    <td>{{u.contrasena}}</td>
+                    <td>{{u.tipo}}</td>
+                    <td><a href="{% url "detalleusuario" u.nombre %}" role="button" class="btn btn-info btn-sm text.light">Ver usuario</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

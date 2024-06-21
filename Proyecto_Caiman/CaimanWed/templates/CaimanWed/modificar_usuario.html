@@ -1,0 +1,33 @@
+{% extends "CaimanWed/base.html" %}
+{% load static %}
+
+{% block Contenido %}
+
+<div class="container px-5 mt-4">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="mt-4 p-2 border rounded">
+                <h3 class="text-center mt-3">Editar Usuario</h3>
+                <h6 class="text-center">NOMBRE - {{usuario.nombre}}</h6>
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form | crispy}}
+                    <div>
+                        <input type="submit" value="Guardar Cambios" class="btn btn-warning text-light">
+                        <a href='{% url "usuarios" %}' role='button' class="btn btn-light border">Volver</a>
+                    </div>
+                   
+                </form>
+                
+            </div>
+            
+
+
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+
+</div>
+
+{% endblock Contenido %}

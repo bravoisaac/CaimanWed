@@ -1,0 +1,28 @@
+{% extends "CaimanWed/base.html" %}
+{% load static %}
+
+{% block Contenedor %}
+
+<div class="container">
+    <div class="mt-4 p-5 bg-primary text-white rounded">
+        <h1>Crud con Django Example</h1>
+        <p>Con lluvia...</p>
+    </div>
+
+    <div class="border rounded mt-3 p-2">
+        <h3>Traer datos a la página</h3>
+        <p>{{fecha}}</p>
+        <p>{{msg}}</p>
+        <h5>Lista de Objetos</h5>
+        <ul>
+            {% for i in lista %}
+                <li>{{i}}</li>
+            {% endfor %}
+
+        </ul>
+
+        <p>Cantidad elementos: {{item}}</p>
+    </div>
+</div>
+
+{% endblock Contenedor %}
