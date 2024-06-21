@@ -1,10 +1,14 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto, Transportista, OrdenDespacho, DetalleOrden, Supermercado, Envio, Usuario
-
-from django.shortcuts import render, redirect
-from .models import Producto, Transportista, OrdenDespacho, DetalleOrden, Supermercado, Envio, Usuario
-from .forms import LoginForm
+from .forms import LoginForm, ProductoForm, UsuarioForm
 from django.contrib.auth import authenticate, login
+
+
+
+
+
+
+
 def index(request):
     return render(request, 'index.html')
 
@@ -19,9 +23,6 @@ def about(request):
 
 def support(request):
     return render(request, 'support.html')
-from .forms import UsuarioForm
-def index(request):
-    return render(request, 'index.html')
 
 
 def reporte_inventario(request):
@@ -57,10 +58,6 @@ def registro(request):
     else:
         form = UsuarioForm()
     return render(request, 'registro.html', {'form': form})
-
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import Producto
-from .forms import ProductoForm
 
 def producto_list(request):
     productos = Producto.objects.all()
