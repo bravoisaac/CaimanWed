@@ -1,0 +1,41 @@
+{% load  static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaimanWed</title>
+    <link rel="stylesheet" href="{% static 'css' %}/login.css">
+</head>
+<body>
+    <div class="content">
+        <form action="" method="POST">
+            {% csrf_token %}
+            
+            <h2>CaimanWed</h2>
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Correo" required>
+                <i class="ri-mail-fill"></i>
+            </div>
+    
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Contraseña" required autocomplete="current-password">
+    
+                <i class="ri-lock-fill"></i>
+            </div>
+    
+            <div class="remember">
+                <label>
+                    <input type="checkbox" name="remember">Recuérdame
+                </label>
+                <a href="#">Recuperar contraseña</a>
+            </div>
+    
+            <button type="submit" class="btn">Iniciar Sesión</button>
+            <button type="submit" class="btn"><a href="{% url 'registro' %}">Registrar</a></button>
+        </form>
+        
+    </div>
+    {% block contenido %}{% endblock %} 
+</body>
+</html>
